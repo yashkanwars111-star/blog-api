@@ -1,8 +1,5 @@
 express=require('express');
 const router=express.Router()
-
-router.get('/',(req,res)=>{
-    const posts={message:"hi this is a post"}
-    res.json(posts)
-})
+const postcontroller=require('../contollers/posts.controller')
+router.get('/',postcontroller.getallposts)
 module.exports=router
